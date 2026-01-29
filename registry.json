@@ -75,6 +75,56 @@
           "type": "registry:component"
         }
       ]
+    },
+    {
+      "name": "image-overlay",
+      "type": "registry:component",
+      "title": "Image Overlay",
+      "description": "An image component with hover/touch overlay effects and pointer-type-aware interactions.",
+      "files": [
+        {
+          "path": "registry/new-york/blocks/image-overlay/image-overlay.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/new-york/blocks/image-overlay/hooks/use-pointer-type.ts",
+          "type": "registry:hook"
+        }
+      ]
+    },
+    {
+      "name": "lightbox-image",
+      "type": "registry:component",
+      "title": "Lightbox Image",
+      "description": "An image component with fullscreen lightbox support, gallery mode, captions, and optimized Next.js image rendering.",
+      "dependencies": ["yet-another-react-lightbox", "@radix-ui/react-slot"],
+      "registryDependencies": ["image-overlay"],
+      "files": [
+        {
+          "path": "registry/new-york/blocks/lightbox-image/lightbox-image.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/new-york/blocks/lightbox-image/lightbox/lightbox-provider.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/new-york/blocks/lightbox-image/lightbox/lightbox-trigger.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/new-york/blocks/lightbox-image/lightbox/next-image-slide.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/new-york/blocks/lightbox-image/lightbox/types.ts",
+          "type": "registry:lib"
+        },
+        {
+          "path": "registry/new-york/blocks/lightbox-image/lightbox/index.ts",
+          "type": "registry:lib"
+        }
+      ]
     }
   ]
 }
