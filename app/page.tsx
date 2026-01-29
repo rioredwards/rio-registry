@@ -1,9 +1,11 @@
-import * as React from "react"
 import { OpenInV0Button } from "@/components/open-in-v0-button"
-import { HelloWorld } from "@/registry/new-york/blocks/hello-world/hello-world"
-import { ExampleForm } from "@/registry/new-york/blocks/example-form/example-form"
 import PokemonPage from "@/registry/new-york/blocks/complex-component/page"
+import { ExampleForm } from "@/registry/new-york/blocks/example-form/example-form"
 import { ExampleCard } from "@/registry/new-york/blocks/example-with-css/example-card"
+import { HelloWorld } from "@/registry/new-york/blocks/hello-world/hello-world"
+import { ImageOverlay } from "@/registry/new-york/blocks/image-overlay/image-overlay"
+import { LightboxProvider } from "@/registry/new-york/blocks/lightbox-image/lightbox"
+import { LightboxImage } from "@/registry/new-york/blocks/lightbox-image/lightbox-image"
 // This page displays items from the custom registry.
 // You are free to implement this with your own design as needed.
 
@@ -17,6 +19,57 @@ export default function Home() {
         </p>
       </header>
       <main className="flex flex-col flex-1 gap-8">
+
+        <div className="flex flex-col gap-4 border rounded-lg p-4 min-h-[450px] relative">
+          <div className="flex items-center justify-between">
+            <h2 className="text-sm text-muted-foreground sm:pl-3">
+              An image component with hover/touch overlay effects and pointer-type-aware interactions.
+            </h2>
+            <OpenInV0Button name="image-overlay" className="w-fit" />
+          </div>
+          <div className="flex items-center justify-center min-h-[400px] relative">
+            <ImageOverlay
+              src="https://images.unsplash.com/photo-1518717758536-85ae29035b6d?auto=format&fit=crop&w=800&q=80"
+              alt="Demo image"
+              sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
+              priority={false}
+              className=""
+            >
+              <div className="absolute inset-x-4 bottom-4 flex flex-col items-start gap-1 rounded-md bg-black/60 px-3 py-2 text-left text-xs text-white shadow-lg backdrop-blur-sm">
+                <span className="inline-flex items-center gap-1 rounded-full bg-white/10 px-2 py-0.5 text-[10px] font-medium uppercase tracking-wide">
+                  <span className="h-1 w-1 rounded-full bg-emerald-400" />
+                  yes
+                </span>
+                <p className="text-sm font-semibold">
+                  Hover or tap to explore the overlay
+                </p>
+                <p className="text-[11px] text-white/80">
+                  This content is rendered as children of the <code>ImageOverlay</code> component.
+                </p>
+              </div>
+            </ImageOverlay>
+          </div>
+        </div>
+
+        <div className="flex flex-col gap-4 border rounded-lg p-4 min-h-[450px] relative">
+          <div className="flex items-center justify-between">
+            <h2 className="text-sm text-muted-foreground sm:pl-3">
+              An image component with fullscreen lightbox support, gallery mode, captions, and optimized Next.js image rendering.
+            </h2>
+            <OpenInV0Button name="lightbox-image" className="w-fit" />
+          </div>
+          <div className="flex items-center justify-center min-h-[400px] relative">
+            <LightboxProvider>
+              <LightboxImage
+                src="https://images.unsplash.com/photo-1558788353-f76d92427f16?auto=format&fit=crop&w=800&q=80"
+                alt="Demo image"
+                enableLightbox
+                caption="Click to open in lightbox"
+              />
+            </LightboxProvider>
+          </div>
+        </div>
+
         <div className="flex flex-col gap-4 border rounded-lg p-4 min-h-[450px] relative">
           <div className="flex items-center justify-between">
             <h2 className="text-sm text-muted-foreground sm:pl-3">

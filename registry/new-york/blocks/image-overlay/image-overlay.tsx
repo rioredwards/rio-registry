@@ -1,9 +1,9 @@
 "use client";
 
-import Image from "next/image";
-import React, { useCallback, useState } from "react";
 import { cn } from "@/lib/utils";
 import { usePointerType } from "@/registry/new-york/blocks/image-overlay/hooks/use-pointer-type";
+import Image from "next/image";
+import React, { useCallback, useState } from "react";
 
 export interface ImageOverlayProps
   extends Omit<React.ComponentProps<"div">, "children"> {
@@ -78,7 +78,7 @@ const ImageOverlay = React.forwardRef<HTMLDivElement, ImageOverlayProps>(
         ref={ref}
         role="group"
         className={cn(
-          "relative aspect-square overflow-hidden cursor-pointer",
+          "relative aspect-square overflow-hidden cursor-pointer h-full w-full rounded-2xl",
           className
         )}
         onClick={handleClick}

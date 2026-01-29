@@ -1,7 +1,7 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry.json",
-  "name": "acme",
-  "homepage": "https://acme.com",
+  "name": "rio",
+  "homepage": "http://localhost:3000",
   "items": [
     {
       "name": "hello-world",
@@ -98,7 +98,7 @@
       "title": "Lightbox Image",
       "description": "An image component with fullscreen lightbox support, gallery mode, captions, and optimized Next.js image rendering.",
       "dependencies": ["yet-another-react-lightbox", "@radix-ui/react-slot"],
-      "registryDependencies": ["image-overlay"],
+      "registryDependencies": ["@rio/image-overlay"],
       "files": [
         {
           "path": "registry/new-york/blocks/lightbox-image/lightbox-image.tsx",

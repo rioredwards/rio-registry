@@ -2,12 +2,12 @@
 
 import { cn } from "@/lib/utils";
 import { usePointerType } from "@/registry/new-york/blocks/image-overlay/hooks/use-pointer-type";
+import { ImageOverlay } from "@/registry/new-york/blocks/image-overlay/image-overlay";
+import { useLightbox } from "@/registry/new-york/blocks/lightbox-image/lightbox/lightbox-provider";
+import { LightboxTrigger } from "@/registry/new-york/blocks/lightbox-image/lightbox/lightbox-trigger";
+import type { LightboxSlide } from "@/registry/new-york/blocks/lightbox-image/lightbox/types";
 import { Maximize2 } from "lucide-react";
 import { StaticImageData } from "next/image";
-import { ImageOverlay } from "@/registry/new-york/blocks/image-overlay/image-overlay";
-import { LightboxTrigger } from "@/registry/new-york/blocks/lightbox-image/lightbox/lightbox-trigger";
-import { useLightbox } from "@/registry/new-york/blocks/lightbox-image/lightbox/lightbox-provider";
-import type { LightboxSlide } from "@/registry/new-york/blocks/lightbox-image/lightbox/types";
 
 interface LightboxImageProps {
   src: string | StaticImageData;
@@ -56,14 +56,14 @@ export function LightboxImage({
   };
 
   return (
-    <figure className="my-6">
+    <figure className="my-6 size-full">
       <ImageOverlay
         src={imgSrc}
         alt={alt}
         sizes={sizes}
         priority={priority}
-        className={cn("aspect-auto rounded-2xl", className)}
-        overlayClassName="rounded-2xl"
+        className={cn("size-full", className)}
+        overlayClassName="rounded-2xl size-full"
         style={aspectRatio ? { aspectRatio } : undefined}
         zoomOnHover={enableLightbox}
         onClick={handleImageClick}
@@ -73,7 +73,7 @@ export function LightboxImage({
             {...(gallery && gallery.length > 0
               ? { slides: gallery, index: galleryIndex }
               : { slide })}
-            className="backdrop-blur-sm bg-background/70 absolute right-3 top-3 z-20 flex h-8 w-8 items-center justify-center rounded-full text-foreground shadow-md transition-all duration-200 ease-in-out hover:bg-primary hover:text-primary-foreground"
+            className="backdrop-blur-sm bg-background/70 absolute right-3 top-3 z-20 flex h-8 w-8 items-center justify-center rounded-full text-foreground shadow-md transition-all duration-200 ease-in-out hover:bg-primary hover:text-primary-foreground cursor-pointer"
             aria-label="View fullscreen"
           >
             <Maximize2 className="w-4 h-4" />
