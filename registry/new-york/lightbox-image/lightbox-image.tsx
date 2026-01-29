@@ -1,11 +1,11 @@
 "use client";
 
 import { cn } from "@/lib/utils";
-import { usePointerType } from "@/registry/new-york/blocks/image-overlay/hooks/use-pointer-type";
-import { ImageOverlay } from "@/registry/new-york/blocks/image-overlay/image-overlay";
-import { useLightbox } from "@/registry/new-york/blocks/lightbox-image/lightbox/lightbox-provider";
-import { LightboxTrigger } from "@/registry/new-york/blocks/lightbox-image/lightbox/lightbox-trigger";
-import type { LightboxSlide } from "@/registry/new-york/blocks/lightbox-image/lightbox/types";
+import { usePointerType } from "@/registry/new-york/image-overlay/use-pointer-type";
+import { ImageOverlay } from "@/registry/new-york/image-overlay/image-overlay";
+import { useLightbox } from "@/registry/new-york/lightbox-image/lightbox-provider";
+import { LightboxTrigger } from "@/registry/new-york/lightbox-image/lightbox-trigger";
+import type { LightboxSlide } from "@/registry/new-york/lightbox-image/types";
 import { StaticImageData } from "next/image";
 
 interface LightboxImageProps {

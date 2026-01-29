@@ -3,9 +3,9 @@ import PokemonPage from "@/registry/new-york/blocks/complex-component/page"
 import { ExampleForm } from "@/registry/new-york/blocks/example-form/example-form"
 import { ExampleCard } from "@/registry/new-york/blocks/example-with-css/example-card"
 import { HelloWorld } from "@/registry/new-york/blocks/hello-world/hello-world"
-import { ImageOverlay } from "@/registry/new-york/blocks/image-overlay/image-overlay"
-import { LightboxProvider } from "@/registry/new-york/blocks/lightbox-image/lightbox"
-import { LightboxImage } from "@/registry/new-york/blocks/lightbox-image/lightbox-image"
+import { ImageOverlay } from "@/registry/new-york/image-overlay/image-overlay"
+import { LightboxProvider } from "@/registry/new-york/lightbox-image/lightbox-provider"
+import { LightboxImage } from "@/registry/new-york/lightbox-image/lightbox-image"
 // This page displays items from the custom registry.
 // You are free to implement this with your own design as needed.
 

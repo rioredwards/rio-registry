@@ -1,7 +1,7 @@
 "use client";
 
 import { cn } from "@/lib/utils";
-import { usePointerType } from "@/registry/new-york/blocks/image-overlay/hooks/use-pointer-type";
+import { usePointerType } from "@/registry/new-york/image-overlay/use-pointer-type";
 import Image from "next/image";
 import React, { useCallback, useState } from "react";
 

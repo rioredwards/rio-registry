@@ -6,8 +6,8 @@ import Video from "yet-another-react-lightbox/plugins/video";
 import Captions from "yet-another-react-lightbox/plugins/captions";
 import "yet-another-react-lightbox/styles.css";
 import "yet-another-react-lightbox/plugins/captions.css";
-import type { LightboxContextValue } from "@/registry/new-york/blocks/lightbox-image/lightbox/types";
-import { NextJsImageSlide } from "@/registry/new-york/blocks/lightbox-image/lightbox/next-image-slide";
+import type { LightboxContextValue } from "@/registry/new-york/lightbox-image/types";
+import { NextJsImageSlide } from "@/registry/new-york/lightbox-image/next-image-slide";
 
 const LightboxContext = createContext<LightboxContextValue | null>(null);
 

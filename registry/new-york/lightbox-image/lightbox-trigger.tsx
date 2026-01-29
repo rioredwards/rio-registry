@@ -3,7 +3,7 @@
 import { Slot } from "@radix-ui/react-slot";
 import React from "react";
 import type { Slide } from "yet-another-react-lightbox";
-import { useLightbox } from "@/registry/new-york/blocks/lightbox-image/lightbox/lightbox-provider";
+import { useLightbox } from "@/registry/new-york/lightbox-image/lightbox-provider";
 
 type SingleSlideProps = {
   slide: Slide;
