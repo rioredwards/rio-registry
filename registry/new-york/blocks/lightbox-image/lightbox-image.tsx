@@ -6,7 +6,6 @@ import { ImageOverlay } from "@/registry/new-york/blocks/image-overlay/image-ove
 import { useLightbox } from "@/registry/new-york/blocks/lightbox-image/lightbox/lightbox-provider";
 import { LightboxTrigger } from "@/registry/new-york/blocks/lightbox-image/lightbox/lightbox-trigger";
 import type { LightboxSlide } from "@/registry/new-york/blocks/lightbox-image/lightbox/types";
-import { Maximize2 } from "lucide-react";
 import { StaticImageData } from "next/image";
 
 interface LightboxImageProps {
@@ -19,6 +18,7 @@ interface LightboxImageProps {
   priority?: boolean;
   className?: string;
   sizes?: string;
+  maximizeIcon?: React.ReactNode;
 }
 
 export function LightboxImage({
@@ -31,6 +31,7 @@ export function LightboxImage({
   priority = false,
   className,
   sizes = "(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 640px",
+  maximizeIcon,
 }: LightboxImageProps) {
   const pointerType = usePointerType();
   const { openSingle, openGallery } = useLightbox();
@@ -73,10 +74,9 @@ export function LightboxImage({
             {...(gallery && gallery.length > 0
               ? { slides: gallery, index: galleryIndex }
               : { slide })}
-            className="backdrop-blur-sm bg-background/70 absolute right-3 top-3 z-20 flex h-8 w-8 items-center justify-center rounded-full text-foreground shadow-md transition-all duration-200 ease-in-out hover:bg-primary hover:text-primary-foreground cursor-pointer"
             aria-label="View fullscreen"
           >
-            <Maximize2 className="w-4 h-4" />
+            {maximizeIcon || <DefaultMaximizeIcon />}
           </LightboxTrigger>
         )}
       </ImageOverlay>
@@ -86,5 +86,29 @@ export function LightboxImage({
         </figcaption>
       )}
     </figure>
+  );
+}
+
+function DefaultMaximizeIcon() {
+  return (
+    <div className="backdrop-blur-sm bg-background/70 absolute right-3 top-3 z-20 flex h-8 w-8 items-center justify-center rounded-full text-foreground shadow-md transition-all duration-200 ease-in-out hover:bg-primary hover:text-primary-foreground cursor-pointer">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width={24}
+        height={24}
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth={2}
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        className="w-4 h-4"
+      >
+        <polyline points="15 3 21 3 21 9" />
+        <polyline points="9 21 3 21 3 15" />
+        <line x1={21} x2={14} y1={3} y2={10} />
+        <line x1={3} x2={10} y1={21} y2={14} />
+      </svg>
+    </div>
   );
 }
