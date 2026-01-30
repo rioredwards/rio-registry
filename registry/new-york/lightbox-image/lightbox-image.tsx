@@ -1,9 +1,6 @@
-"use client";
-
 import { cn } from "@/lib/utils";
-import { usePointerType } from "@/registry/new-york/image-overlay/use-pointer-type";
 import { ImageOverlay } from "@/registry/new-york/image-overlay/image-overlay";
-import { useLightbox } from "@/registry/new-york/lightbox-image/lightbox-provider";
+import { LightboxImageClient } from "@/registry/new-york/lightbox-image/lightbox-image-client";
 import { LightboxTrigger } from "@/registry/new-york/lightbox-image/lightbox-trigger";
 import type { LightboxSlide } from "@/registry/new-york/lightbox-image/types";
 import { StaticImageData } from "next/image";
@@ -33,55 +30,43 @@ export function LightboxImage({
   sizes = "(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 640px",
   maximizeIcon,
 }: LightboxImageProps) {
-  const pointerType = usePointerType();
-  const { openSingle, openGallery } = useLightbox();
-
   const isStaticImage = typeof src === "object";
-  const imgSrc = isStaticImage ? src.src : src;
-  const aspectRatio = isStaticImage
-    ? `${src.width} / ${src.height}`
-    : undefined;
 
   const slide: LightboxSlide = isStaticImage
     ? { ...src, alt, description: caption }
     : { src, alt, description: caption };
 
-  const handleImageClick = () => {
-    if (pointerType === "fine" && enableLightbox) {
-      if (gallery && gallery.length > 0) {
-        openGallery(gallery, galleryIndex);
-      } else {
-        openSingle(slide);
-      }
-    }
-  };
-
   return (
     <figure className="my-6 size-full">
-      <ImageOverlay
-        src={imgSrc}
-        alt={alt}
-        sizes={sizes}
-        priority={priority}
-        className={cn("size-full", className)}
-        overlayClassName="rounded-2xl size-full"
-        style={aspectRatio ? { aspectRatio } : undefined}
-        zoomOnHover={enableLightbox}
-        onClick={handleImageClick}
+      <LightboxImageClient
+        enableLightbox={enableLightbox}
+        slide={slide}
+        gallery={gallery}
+        galleryIndex={galleryIndex}
       >
-        {enableLightbox && (
-          <LightboxTrigger
-            {...(gallery && gallery.length > 0
-              ? { slides: gallery, index: galleryIndex }
-              : { slide })}
-            aria-label="View fullscreen"
-          >
-            {maximizeIcon || <DefaultMaximizeIcon />}
-          </LightboxTrigger>
-        )}
-      </ImageOverlay>
+        <ImageOverlay
+          src={src}
+          alt={alt}
+          sizes={sizes}
+          priority={priority}
+          className={cn("size-full", className)}
+          overlayClassName="rounded-2xl size-full"
+          zoomOnHover={enableLightbox}
+        >
+          {enableLightbox && (
+            <LightboxTrigger
+              {...(gallery && gallery.length > 0
+                ? { slides: gallery, index: galleryIndex }
+                : { slide })}
+              aria-label="View fullscreen"
+            >
+              {maximizeIcon || <DefaultMaximizeIcon />}
+            </LightboxTrigger>
+          )}
+        </ImageOverlay>
+      </LightboxImageClient>
       {caption && (
-        <figcaption className="mt-2 text-sm text-muted-foreground text-center italic">
+        <figcaption className="mt-2 text-center text-sm text-muted-foreground italic">
           {caption}
         </figcaption>
       )}
@@ -91,7 +76,7 @@ export function LightboxImage({
 
 function DefaultMaximizeIcon() {
   return (
-    <div className="backdrop-blur-sm bg-background/70 absolute right-3 top-3 z-20 flex h-8 w-8 items-center justify-center rounded-full text-foreground shadow-md transition-all duration-200 ease-in-out hover:bg-primary hover:text-primary-foreground cursor-pointer">
+    <div className="absolute top-3 right-3 z-20 flex h-8 w-8 cursor-pointer items-center justify-center rounded-full bg-background/70 text-foreground shadow-md backdrop-blur-sm transition-all duration-200 ease-in-out hover:bg-primary hover:text-primary-foreground">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width={24}
@@ -102,7 +87,7 @@ function DefaultMaximizeIcon() {
         strokeWidth={2}
         strokeLinecap="round"
         strokeLinejoin="round"
-        className="w-4 h-4"
+        className="h-4 w-4"
       >
         <polyline points="15 3 21 3 21 9" />
         <polyline points="9 21 3 21 3 15" />

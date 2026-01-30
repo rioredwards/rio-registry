@@ -1,3 +1,10 @@
-export { LightboxProvider, useLightbox } from "@/registry/new-york/lightbox-image/lightbox-provider";
+export {
+  LightboxProvider,
+  useLightbox,
+} from "@/registry/new-york/lightbox-image/lightbox-provider";
 export { LightboxTrigger } from "@/registry/new-york/lightbox-image/lightbox-trigger";
-export type { LightboxSlide, LightboxContextValue } from "@/registry/new-york/lightbox-image/types";
+export { LightboxImageClient } from "@/registry/new-york/lightbox-image/lightbox-image-client";
+export type {
+  LightboxSlide,
+  LightboxContextValue,
+} from "@/registry/new-york/lightbox-image/types";

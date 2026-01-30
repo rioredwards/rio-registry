@@ -88,6 +88,11 @@
           "target": "components/image-overlay/image-overlay.tsx"
         },
         {
+          "path": "registry/new-york/image-overlay/image-overlay-client.tsx",
+          "type": "registry:component",
+          "target": "components/image-overlay/image-overlay-client.tsx"
+        },
+        {
           "path": "registry/new-york/image-overlay/use-pointer-type.ts",
           "type": "registry:component",
           "target": "components/image-overlay/use-pointer-type.ts"
@@ -106,6 +111,11 @@
           "path": "registry/new-york/lightbox-image/lightbox-image.tsx",
           "type": "registry:component",
           "target": "components/lightbox-image/lightbox-image.tsx"
+        },
+        {
+          "path": "registry/new-york/lightbox-image/lightbox-image-client.tsx",
+          "type": "registry:component",
+          "target": "components/lightbox-image/lightbox-image-client.tsx"
         },
         {
           "path": "registry/new-york/lightbox-image/lightbox-provider.tsx",
