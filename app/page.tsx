@@ -4,8 +4,8 @@ import { ExampleForm } from "@/registry/new-york/blocks/example-form/example-for
 import { ExampleCard } from "@/registry/new-york/blocks/example-with-css/example-card";
 import { HelloWorld } from "@/registry/new-york/blocks/hello-world/hello-world";
 import { ImageOverlay } from "@/registry/new-york/image-overlay/image-overlay";
-import { LightboxProvider } from "@/registry/new-york/lightbox-image/lightbox-provider";
 import { LightboxImage } from "@/registry/new-york/lightbox-image/lightbox-image";
+import { LightboxProvider } from "@/registry/new-york/lightbox-image/lightbox-provider";
 // This page displays items from the custom registry.
 // You are free to implement this with your own design as needed.
 
@@ -29,11 +29,12 @@ export default function Home() {
           </div>
           <div className="relative flex min-h-[400px] items-center justify-center">
             <ImageOverlay
-              src="https://images.unsplash.com/photo-1518717758536-85ae29035b6d?auto=format&fit=crop&w=800&q=80"
+              src={
+                "https://images.unsplash.com/photo-1518717758536-85ae29035b6d?auto=format&fit=crop&w=800&q=80"
+              }
               alt="Demo image"
               sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
               priority={false}
-              className=""
             >
               <div className="absolute inset-x-4 bottom-4 flex flex-col items-start gap-1 rounded-md bg-black/60 px-3 py-2 text-left text-xs text-white shadow-lg backdrop-blur-sm">
                 <span className="inline-flex items-center gap-1 rounded-full bg-white/10 px-2 py-0.5 text-[10px] font-medium tracking-wide uppercase">

@@ -33,7 +33,8 @@ function ImageOverlay({
   return (
     <ImageOverlayClient
       className={cn(
-        "relative cursor-pointer overflow-hidden rounded-2xl border border-border",
+        "relative size-full cursor-pointer overflow-hidden rounded-2xl border border-border",
+        !isStaticImage ? "aspect-square" : undefined,
         className,
       )}
       style={{
