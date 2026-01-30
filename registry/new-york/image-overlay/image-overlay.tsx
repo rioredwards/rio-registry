@@ -33,8 +33,7 @@ function ImageOverlay({
   return (
     <ImageOverlayClient
       className={cn(
-        "relative size-full cursor-pointer overflow-hidden rounded-2xl border border-border",
-        !isStaticImage ? "aspect-square" : undefined,
+        "relative aspect-square cursor-pointer overflow-hidden rounded-2xl shadow-lg",
         className,
       )}
       style={{
@@ -59,7 +58,7 @@ function ImageOverlay({
       {children && (
         <div
           className={cn(
-            "absolute inset-0 bg-transparent transition-colors duration-300 group-data-[active=true]:bg-foreground/40",
+            "absolute inset-0 bg-transparent transition-colors duration-300 group-data-[active=true]:bg-black/30",
             overlayClassName,
           )}
         >
