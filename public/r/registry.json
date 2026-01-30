@@ -77,6 +77,19 @@
       ]
     },
     {
+      "name": "video-player",
+      "type": "registry:component",
+      "title": "Video Player",
+      "description": "A video player component with play/pause, progress bar, volume toggle, and fullscreen controls.",
+      "files": [
+        {
+          "path": "registry/new-york/video-player/video-player.tsx",
+          "type": "registry:component",
+          "target": "components/video-player/video-player.tsx"
+        }
+      ]
+    },
+    {
       "name": "image-overlay",
       "type": "registry:component",
       "title": "Image Overlay",

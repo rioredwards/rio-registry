@@ -6,6 +6,7 @@ import { HelloWorld } from "@/registry/new-york/blocks/hello-world/hello-world";
 import { ImageOverlay } from "@/registry/new-york/image-overlay/image-overlay";
 import { LightboxImage } from "@/registry/new-york/lightbox-image/lightbox-image";
 import { LightboxProvider } from "@/registry/new-york/lightbox-image/lightbox-provider";
+import { VideoPlayer } from "@/registry/new-york/video-player/video-player";
 // This page displays items from the custom registry.
 // You are free to implement this with your own design as needed.
 
@@ -19,6 +20,22 @@ export default function Home() {
         </p>
       </header>
       <main className="flex flex-1 flex-col gap-8">
+        <div className="relative flex min-h-[450px] flex-col gap-4 rounded-lg border p-4">
+          <div className="flex items-center justify-between">
+            <h2 className="text-sm text-muted-foreground sm:pl-3">
+              A video player component with play/pause, progress bar, volume
+              toggle, and fullscreen controls.
+            </h2>
+            <OpenInV0Button name="video-player" className="w-fit" />
+          </div>
+          <div className="relative flex min-h-[400px] items-center justify-center">
+            <VideoPlayer
+              src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
+              className="aspect-video w-full max-w-lg"
+            />
+          </div>
+        </div>
+
         <div className="relative flex min-h-[450px] flex-col gap-4 rounded-lg border p-4">
           <div className="flex items-center justify-between">
             <h2 className="text-sm text-muted-foreground sm:pl-3">
