@@ -138,6 +138,11 @@
           "target": "components/lightbox-image/types.ts"
         },
         {
+          "path": "registry/new-york/lightbox-image/lightbox-gallery.tsx",
+          "type": "registry:component",
+          "target": "components/lightbox-image/lightbox-gallery.tsx"
+        },
+        {
           "path": "registry/new-york/lightbox-image/index.ts",
           "type": "registry:component",
           "target": "components/lightbox-image/index.ts"

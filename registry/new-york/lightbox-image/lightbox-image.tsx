@@ -5,7 +5,7 @@ import { LightboxTrigger } from "@/registry/new-york/lightbox-image/lightbox-tri
 import type { LightboxSlide } from "@/registry/new-york/lightbox-image/types";
 import { StaticImageData } from "next/image";
 
-interface LightboxImageProps {
+export interface LightboxImageProps {
   src: string | StaticImageData;
   alt: string;
   caption?: React.ReactNode;
@@ -22,7 +22,7 @@ export function LightboxImage({
   src,
   alt,
   caption,
-  enableLightbox = false,
+  enableLightbox = true,
   gallery,
   galleryIndex = 0,
   priority = false,
