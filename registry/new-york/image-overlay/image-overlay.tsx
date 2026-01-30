@@ -50,8 +50,8 @@ function ImageOverlay({
         sizes={sizes}
         placeholder={isStaticImage && src.blurDataURL ? "blur" : undefined}
         className={cn(
-          "object-cover transition-transform duration-300 ease-in-out",
-          zoomOnHover && "group-data-[active=true]:scale-105",
+          "object-cover transition-transform duration-500 ease-out",
+          zoomOnHover && "group-data-[active=true]:scale-[102%]",
         )}
       />
 

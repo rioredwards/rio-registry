@@ -78,16 +78,15 @@ export function LightboxImage({
 function DefaultMaximizeIcon() {
   return (
     <div className="absolute top-4 right-4 z-20">
-      <button
+      <div
         className={cn(
           "flex h-10 w-10 cursor-pointer items-center justify-center rounded-full",
           "bg-white/10 backdrop-blur-sm hover:bg-white/20",
           "transition-all duration-200 hover:scale-105 active:scale-95",
         )}
-        aria-label="View fullscreen"
       >
         <Maximize className="h-5 w-5 fill-white text-white" />
-      </button>
+      </div>
     </div>
   );
 }
