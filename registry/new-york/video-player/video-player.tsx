@@ -186,7 +186,7 @@ export function VideoPlayer({
       {/* Gradient overlay for controls visibility */}
       <div
         className={cn(
-          "absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent",
+          "absolute inset-0 bg-linear-to-t from-black/60 via-transparent to-transparent",
           "transition-opacity duration-300",
           showControls ? "opacity-100" : "opacity-0",
         )}
@@ -278,7 +278,7 @@ export function VideoPlayer({
             <button
               onClick={toggleFullscreen}
               className={cn(
-                "flex h-10 w-10 items-center justify-center rounded-full",
+                "flex h-10 w-10 cursor-pointer items-center justify-center rounded-full",
                 "bg-white/10 backdrop-blur-sm hover:bg-white/20",
                 "transition-all duration-200 hover:scale-105 active:scale-95",
               )}
