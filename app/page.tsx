@@ -31,7 +31,7 @@ export default function Home() {
           <div className="relative flex min-h-[400px] items-center justify-center">
             <VideoPlayer
               src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
-              className="aspect-video w-full max-w-lg"
+              className=""
             />
           </div>
         </div>

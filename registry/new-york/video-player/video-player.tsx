@@ -242,7 +242,7 @@ export function VideoPlayer({
             <button
               onClick={togglePlay}
               className={cn(
-                "flex h-10 w-10 items-center justify-center rounded-full",
+                "flex h-10 w-10 cursor-pointer items-center justify-center rounded-full",
                 "bg-white/10 backdrop-blur-sm hover:bg-white/20",
                 "transition-all duration-200 hover:scale-105 active:scale-95",
               )}
@@ -259,7 +259,7 @@ export function VideoPlayer({
               <button
                 onClick={toggleMute}
                 className={cn(
-                  "flex h-10 w-10 items-center justify-center rounded-full",
+                  "flex h-10 w-10 cursor-pointer items-center justify-center rounded-full",
                   "bg-white/10 backdrop-blur-sm hover:bg-white/20",
                   "transition-all duration-200 hover:scale-105 active:scale-95",
                 )}
