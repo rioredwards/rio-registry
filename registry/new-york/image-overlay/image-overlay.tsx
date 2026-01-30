@@ -33,7 +33,7 @@ function ImageOverlay({
   return (
     <ImageOverlayClient
       className={cn(
-        "relative aspect-square cursor-pointer overflow-hidden rounded-2xl shadow-lg",
+        "group/overlay relative aspect-square cursor-pointer overflow-hidden rounded-2xl shadow-lg",
         className,
       )}
       style={{
@@ -51,7 +51,8 @@ function ImageOverlay({
         placeholder={isStaticImage && src.blurDataURL ? "blur" : undefined}
         className={cn(
           "object-cover transition-transform duration-500 ease-out",
-          zoomOnHover && "group-data-[active=true]:scale-[102%]",
+          zoomOnHover &&
+            "group-active/overlay:scale-[100%]! group-data-[active=true]:scale-[102%]",
         )}
       />
 
