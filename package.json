@@ -1,5 +1,5 @@
 {
-  "name": "registry",
+  "name": "rio-registry",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -43,5 +43,6 @@
       "@types/react": "19.1.2",
       "@types/react-dom": "19.1.2"
     }
-  }
+  },
+  "description": "Rio Edwards' custom shadcn component registry"
 }

@@ -1,23 +1,51 @@
-# registry-template
+# Rio Registry
 
-You can use the `shadcn` CLI to run your own component registry. Running your own
-component registry allows you to distribute your custom components, hooks, pages, and
-other files to any React project.
+A custom shadcn registry for reusable components by Rio Edwards.
 
-> [!IMPORTANT]  
-> This template uses Tailwind v4. For Tailwind v3, see [registry-template-v3](https://github.com/shadcn-ui/registry-template-v3).
+## Components
 
-## Getting Started
+- `video-player`
+- `image-overlay`
+- `lightbox-image` (includes `lightbox-video` support)
 
-This is a template for creating a custom registry using Next.js.
+## Local development
 
-- The template uses a `registry.json` file to define components and their files.
-- The `shadcn build` command is used to build the registry.
-- The registry items are served as static files under `public/r/[name].json`.
-- The template also includes a route handler for serving registry items.
-- Every registry item are compatible with the `shadcn` CLI.
-- We have also added v0 integration using the `Open in v0` api.
+```bash
+npm install
+npm run dev
+```
 
-## Documentation
+Registry JSON endpoints are served at:
 
-Visit the [shadcn documentation](https://ui.shadcn.com/docs/registry) to view the full documentation.
+- `http://localhost:3000/r/registry.json`
+- `http://localhost:3000/r/lightbox-image.json`
+
+## Build registry artifacts
+
+```bash
+npm run registry:build
+```
+
+This regenerates files in `public/r/` for shadcn CLI consumption.
+
+## Using this registry in another project
+
+Add to `components.json`:
+
+```json
+{
+  "registries": {
+    "rio": {
+      "url": "https://your-registry-domain.com/r"
+    }
+  }
+}
+```
+
+Then install items:
+
+```bash
+npx shadcn@latest add @rio/video-player
+npx shadcn@latest add @rio/image-overlay
+npx shadcn@latest add @rio/lightbox-image
+```
