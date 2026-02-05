@@ -118,7 +118,7 @@
       "title": "Lightbox Image",
       "description": "An image component with fullscreen lightbox support, gallery mode, captions, and optimized Next.js image rendering.",
       "dependencies": ["yet-another-react-lightbox", "@radix-ui/react-slot"],
-      "registryDependencies": ["@rio/image-overlay"],
+      "registryDependencies": ["@rio/image-overlay", "@rio/video-player"],
       "files": [
         {
           "path": "registry/new-york/lightbox-image/lightbox-image.tsx",
@@ -159,6 +159,16 @@
           "path": "registry/new-york/lightbox-image/index.ts",
           "type": "registry:component",
           "target": "components/lightbox-image/index.ts"
+        },
+        {
+          "path": "registry/new-york/lightbox-image/lightbox-video.tsx",
+          "type": "registry:component",
+          "target": "components/lightbox-image/lightbox-video.tsx"
+        },
+        {
+          "path": "registry/new-york/lightbox-image/lightbox-modal.tsx",
+          "type": "registry:component",
+          "target": "components/lightbox-image/lightbox-modal.tsx"
         }
       ]
     }
